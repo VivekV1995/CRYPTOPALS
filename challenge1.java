@@ -77,7 +77,7 @@ class challenge1{
 		hex_value_fillup();
 		base64_value_fillup();
 		try{
-			for(int i = 0x000 ; i < 0xfff; i++){
+			for(int i = 0x000 ; i <= 0xfff; i++){
 				hex_64.put(possible_hex_values[i],possible_base64_values[i]);
 			}
 		}
@@ -89,12 +89,13 @@ class challenge1{
 	private String[] hex_split_to_map(String hex){
 		//if hex key is not a multiple of 12 then we add padding on the left
 		int diff= hex.length() % 12;
-		if(diff > 0){
+		if(diff > 0 && hex.length()>12){
 			while(diff>0){
 				 hex="0"+ hex;
 				 diff--;
 			 }
 		}
+		//Base64 is 2 digits long when hex is 3 digits long
 		int base_64_len = hex.length()*2/3;
 		String hex_split[]=new String[base_64_len/2];
 		int j=0;
@@ -118,7 +119,7 @@ class challenge1{
 		challenge1 c1=new challenge1();
 		String hex="49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d";		
 		String base64 = c1.HashFunction(hex);
-		System.out.print(base64);
+		System.out.println(base64);
 	}
 }
 	
