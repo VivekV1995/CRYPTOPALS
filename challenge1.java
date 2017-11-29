@@ -116,7 +116,7 @@ class challenge1{
 	}
 	public static void main(String args[]){
 		//Desired result: "SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t";
-		challenge1 c1=new challenge1();
+		challenge1 c1=new challenge1();	
 		String hex="49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d";		
 		String base64 = c1.HashFunction(hex);
 		System.out.println(base64);
